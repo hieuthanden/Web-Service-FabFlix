@@ -1,0 +1,28 @@
+.his_time {
+    padding-top: 20px;
+    padding-bottom: 5px;
+    font-size: 25px;
+    color: rgb(44, 10, 10);
+    font-weight: bold;
+    
+}
+.his_title {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    color: rgb(41, 24, 24);
+    font-weight: bold;
+    
+}
+.his-50 {
+    width: 49.999%;
+    float: left;
+}
+
+.his-item {
+    margin-left: 20px
+}
+.cont {
+    padding: 5px;
+    font-size: 18px;
+}

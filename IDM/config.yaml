@@ -1,0 +1,26 @@
+serviceConfig:
+  scheme: http://
+  hostName: 0.0.0.0
+  port: 9903
+  path: /api/idm
+
+loggerConfig:
+  outputDir: ./logs/
+  outputFile: test.log
+
+databaseConfig:
+  dbUsername: root
+  dbPassword: Thuylinh2910!
+  dbHostname: localhost
+  dbPort: 3307
+  dbDriver: com.mysql.cj.jdbc.Driver
+  dbName: cs122b
+  dbSettings: ?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+
+sessionConfig:
+  timeout: 9000000
+  expiration: 18000000
+
+botcatcherConfig:
+  requestInterval: 500
+  maxRapidRequest: 5

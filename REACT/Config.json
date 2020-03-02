@@ -1,0 +1,29 @@
+{
+  "baseUrl": "http://98.149.89.101:11111/api/g",
+  "pollLimit": 50,
+  "gatewayEPs": {
+    "reportEP": "/report"
+  },
+  "idmEPs": {
+    "loginEP": "/idm/login",
+    "registerEP": "/idm/register"
+  },
+  "movieEPs": {
+    "searchEP": "/movies/search",
+    "browseEP": "/movies/browse/",
+    "getEP": "/movies/get/",
+    "thumbnailEP": "/movies/thumbnail",
+    "peopleEP": "/movies/people",
+    "peopleSearchEP": "/movies/people/search",
+    "peopleGetEP": "/movies/people/get/"
+  },
+  "billingEPs": {
+    "insertEP": "/billing/cart/insert",
+    "updateEP": "/billing/cart/update",
+    "deleteEP": "/billing/cart/delete",
+    "retrieveEP": "/billing/cart/retrieve",
+    "placeOrderEP": "/billing/order/place",
+    "retrieveOrderEP": "/billing/order/retrieve",
+    "completeOrderEP": "/billing/order/complete"
+  }
+}

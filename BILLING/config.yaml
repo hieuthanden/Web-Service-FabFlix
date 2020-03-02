@@ -1,0 +1,37 @@
+serviceConfig:
+  scheme: http://
+  hostName: 0.0.0.0
+  port: 9905
+  path: /api/billing
+
+loggerConfig:
+  outputDir: ./logs/
+  outputFile: test.log
+
+databaseConfig:
+  dbUsername: root
+  dbPassword: Thuylinh2910!
+  dbHostname: localhost
+  dbPort: 3307
+  dbDriver: com.mysql.cj.jdbc.Driver
+  dbName: cs122b
+  dbSettings: ?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+
+idmConfig:
+  scheme: http://
+  hostName: 0.0.0.0
+  port: 9903
+  path: /api/idm
+
+idmEndpoints:
+  privilege: /privilege
+
+moviesConfig:
+  scheme: http://
+  hostName: 0.0.0.0
+  port: 9904
+  path: /api/movies
+
+moviesEndpoints:
+  thumbnail: /thumbnail
+

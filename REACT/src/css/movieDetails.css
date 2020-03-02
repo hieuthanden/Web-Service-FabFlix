@@ -1,0 +1,75 @@
+.outbound {
+    width: 100%;
+    margin: auto;
+    padding-top: 25px;
+
+}
+
+.col-30 {
+    width: 29.9999%;
+    float: left;
+    padding: 10px;
+}
+
+.col-60 {
+    width: 69.9999%;
+    float: left;
+    padding: 10px;
+}
+
+.page_name{
+    width: 100%;
+    float: left;
+    padding: 10px;
+}
+
+.cont {
+    padding: 5px;
+    font-size: 18px;
+  }
+
+  .form{
+      padding: 10px;
+      justify-content: center;
+      float: left;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+  
+    margin-top: 25px;
+    width: 125px;
+    padding: 10px;
+    border-radius: 3px;
+    border-style: none;
+  
+    font-size: 20px;
+    color: var(--detail-font-color);
+    text-decoration: none;
+  
+    background-color: var(--detail-color);
+    box-shadow: inset 0px 0px 5px -2px #000000;
+    cursor: pointer;
+  
+  }
+
+  .input_number {
+    display: flex;
+  
+    padding: 5px;
+    border-style: none;
+    border-radius: 3px;
+    width: 50px;
+  
+    font-size: 20px;
+    box-shadow: inset 0px 0px 5px -2px #000000;
+    background-color: #f5f5f5;
+  }
+
+  .anno {
+      margin-top: 20px;
+      color: red;
+      font-size: 20px;
+      font-style: italic;
+  }

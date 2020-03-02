@@ -1,0 +1,49 @@
+div.gallery {
+    border: 1px solid #ccc;
+  }
+  
+div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+div.desc {
+    padding: 15px;
+    font-size: 18px;
+    
+    text-align: center;
+  }
+  
+* {
+    box-sizing: border-box;
+  }
+  
+  .responsive {
+    padding: 5px 5px;
+    float: left;
+    width: 19.999%;
+    height: 500px;
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .responsive {
+      width: 33.33333333%;
+      margin: 6px 0;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .responsive {
+      width: 100%;
+    }
+  }
+  
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

@@ -1,0 +1,69 @@
+serviceConfig:
+  scheme: http://
+  hostName: 0.0.0.0
+  port: 12345
+  path: /api/g
+
+loggerConfig:
+  outputDir: ./logs/
+  outputFile: gateway.log
+
+databaseConfig:
+  dbUsername: root
+  dbPassword: Thuylinh2910!
+  dbHostname: localhost
+  dbPort: 3307
+  dbDriver: com.mysql.cj.jdbc.Driver
+  dbName: cs122b
+  dbSettings: ?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+
+threadConfig:
+  numThreads: 10
+  requestDelay: 10
+
+idmConfig:
+  scheme: http://
+  hostName: 0.0.0.0
+  port: 9903
+  path: /api/idm
+
+idmEndpoints:
+  register: /register
+  login: /login
+  session: /session
+  privilege: /privilege
+
+moviesConfig:
+  scheme: http://
+  hostName: 0.0.0.0
+  port: 9904
+  path: /api/movies
+
+moviesEndpoints:
+  search: /search
+  browse: /browse/
+  get: /get/
+  thumbnail: /thumbnail
+  people: /people
+  peopleSearch: /people/search
+  peopleGet: /people/get/
+  
+billingConfig:
+  scheme: http://
+  hostName: 0.0.0.0
+  port: 9905
+  path: /api/billing
+  
+billingEndpoints:
+  cartInsert: /cart/insert
+  cartUpdate: /cart/update
+  cartDelete: /cart/delete
+  cartRetrieve: /cart/retrieve
+  cartClear: /cart/clear
+  orderPlace: /order/place
+  orderRetrieve: /order/retrieve
+  orderComplete: /order/complete
+  
+
+
+

@@ -1,0 +1,146 @@
+[2020/01/10 08:01:58][CONFIG][initService]  Starting service...
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  Scheme: http://
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  Hostname: 0.0.0.0
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  Port: 9905
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  Path: /api/billing
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  Logger output directory: ./logs/
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  Database hostname: localhost
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  Database port: 3307
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  Database username: root
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  Database password provided? true
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  Database name: cs122b
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  Database driver: com.mysql.cj.jdbc.Driver
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  Database connection settings: ?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  IDM Scheme: http://
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  IDM Hostname: 0.0.0.0
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  IDM Port: 9903
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  IDM Path: /api/idm
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  IDM Privilege Path: /privilege
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  Movies Scheme: http://
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  Movies Hostname: 0.0.0.0
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  Movies Port: 9904
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  Movies Path: /api/movies
+[2020/01/10 08:01:58][CONFIG][currentConfigs]  Movies Thumbnail Path: /thumbnail
+[2020/01/10 08:01:58][CONFIG][connectToDatabase]  Connecting to database...
+[2020/01/10 08:01:58][CONFIG][connectToDatabase]  Database URL: jdbc:mysql://localhost:3307/cs122b?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+[2020/01/10 08:01:59][CONFIG][connectToDatabase]  Connected to database: jdbc:mysql://localhost:3307/cs122b?autoReconnect=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=PST
+[2020/01/10 08:01:59][CONFIG][initHTTPServer]  Initializing HTTP server...
+[2020/01/10 08:01:59][CONFIG][initHTTPServer]  Building URI from configs...
+[2020/01/10 08:01:59][CONFIG][initHTTPServer]  Final URI: http://0.0.0.0:9905/api/billing
+[2020/01/10 08:02:00][CONFIG][initHTTPServer]  Set Jersey resources.
+[2020/01/10 08:02:00][CONFIG][initHTTPServer]  Set Jackson as serializer.
+[2020/01/10 08:02:00][CONFIG][initHTTPServer]  Starting HTTP server...
+[2020/01/10 08:02:01][CONFIG][initHTTPServer]  HTTP server started.
+[2020/01/10 08:02:01][CONFIG][initService]  Service initialized.
+[2020/01/10 08:15:03][WARNING][InsertCart]  Inerting movie to cart....
+[2020/01/10 08:15:03][INFO][InsertCart]  Received email, movie_id and quantity
+[2020/01/10 08:15:03][INFO][InsertCart]  Request:
+{"email":"hieuthanden1@gmail.com","movie_id":"tt1135989","quantity":2}
+[2020/01/10 08:15:03][INFO][InsertCart]  Asking for privilege
+[2020/01/10 08:15:03][INFO][findPrivilege]  Building client...
+[2020/01/10 08:15:03][INFO][findPrivilege]  Building WebTarget...
+[2020/01/10 08:15:03][INFO][findPrivilege]  Starting invocation builder...
+[2020/01/10 08:15:03][INFO][findPrivilege]  Sending request...
+[2020/01/10 08:15:04][INFO][findPrivilege]  Request sent.
+[2020/01/10 08:15:04][INFO][findPrivilege]  Received status 200
+[2020/01/10 08:15:04][INFO][findPrivilege]  Successfully mapped response to POJO.
+[2020/01/10 08:15:04][INFO][InsertCart]  GOT privilege for user: hieuthanden1@gmail.com
+[2020/01/10 08:15:04][INFO][InsertCart]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT email FROM cart WHERE email = 'hieuthanden1@gmail.com' AND movie_id = 'tt1135989';
+[2020/01/10 08:15:04][INFO][InsertCart]  Query succeeded.
+[2020/01/10 08:15:04][INFO][InsertCart]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: INSERT INTO cart(email, movie_id, quantity) VALUES('hieuthanden1@gmail.com', 'tt1135989', 2);
+[2020/01/10 08:15:04][INFO][InsertCart]  Query succeeded.
+[2020/01/10 08:15:04][WARNING][InsertCart]  Shopping cart item inserted successfully.
+[2020/01/10 08:15:09][WARNING][DeleteItemCart]  Retrieve items in the cart....
+[2020/01/10 08:15:09][INFO][DeleteItemCart]  Received email
+[2020/01/10 08:15:09][INFO][DeleteItemCart]  Request:
+{"email":"hieuthanden1@gmail.com"}
+[2020/01/10 08:15:09][INFO][DeleteItemCart]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT email, movie_id, quantity, unit_price, discount FROM cart INNER JOIN movie_price USING (movie_id) WHERE email  = 'hieuthanden1@gmail.com';
+[2020/01/10 08:15:09][INFO][DeleteItemCart]  Query succeeded.
+[2020/01/10 08:15:09][INFO][DeleteItemCart]  Asking for thumbails
+[2020/01/10 08:15:09][INFO][getThumbnail]  Building client...
+[2020/01/10 08:15:09][INFO][getThumbnail]  Building WebTarget...
+[2020/01/10 08:15:09][INFO][getThumbnail]  Starting invocation builder...
+[2020/01/10 08:15:09][INFO][getThumbnail]  Sending request...
+[2020/01/10 08:15:09][INFO][getThumbnail]  Request sent.
+[2020/01/10 08:15:09][INFO][getThumbnail]  Received status 200
+[2020/01/10 08:15:09][INFO][getThumbnail]  Successfully mapped response to POJO.
+[2020/01/10 08:15:09][INFO][getThumbnail]  ResultCode: 210
+[2020/01/10 08:15:09][INFO][getThumbnail]  successfully return movies thumbnail
+[2020/01/10 08:15:09][INFO][DeleteItemCart]  GOT all thumbnails for movies.
+[2020/01/10 08:15:09][WARNING][DeleteItemCart]  Shopping cart retrieved successfully.
+[2020/01/10 08:15:19][WARNING][UpdateCart]  Updating number of movie in cart....
+[2020/01/10 08:15:19][INFO][UpdateCart]  Received email, movie_id and quantity
+[2020/01/10 08:15:19][INFO][UpdateCart]  Request:
+{"email":"hieuthanden1@gmail.com","movie_id":"tt1135989","quantity":5}
+[2020/01/10 08:15:19][INFO][UpdateCart]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT email FROM cart WHERE email = 'hieuthanden1@gmail.com' AND movie_id = 'tt1135989';
+[2020/01/10 08:15:19][INFO][UpdateCart]  Query succeeded.
+[2020/01/10 08:15:19][INFO][UpdateCart]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: UPDATE cart SET quantity = 5 WHERE email = 'hieuthanden1@gmail.com' AND movie_id = 'tt1135989';
+[2020/01/10 08:15:19][INFO][UpdateCart]  Query succeeded.
+[2020/01/10 08:15:19][WARNING][UpdateCart]  Shopping cart item updated successfully.
+[2020/01/10 08:15:20][WARNING][DeleteItemCart]  Retrieve items in the cart....
+[2020/01/10 08:15:20][INFO][DeleteItemCart]  Received email
+[2020/01/10 08:15:20][INFO][DeleteItemCart]  Request:
+{"email":"hieuthanden1@gmail.com"}
+[2020/01/10 08:15:20][INFO][DeleteItemCart]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT email, movie_id, quantity, unit_price, discount FROM cart INNER JOIN movie_price USING (movie_id) WHERE email  = 'hieuthanden1@gmail.com';
+[2020/01/10 08:15:20][INFO][DeleteItemCart]  Query succeeded.
+[2020/01/10 08:15:20][INFO][DeleteItemCart]  Asking for thumbails
+[2020/01/10 08:15:20][INFO][getThumbnail]  Building client...
+[2020/01/10 08:15:20][INFO][getThumbnail]  Building WebTarget...
+[2020/01/10 08:15:20][INFO][getThumbnail]  Starting invocation builder...
+[2020/01/10 08:15:20][INFO][getThumbnail]  Sending request...
+[2020/01/10 08:15:21][INFO][getThumbnail]  Request sent.
+[2020/01/10 08:15:21][INFO][getThumbnail]  Received status 200
+[2020/01/10 08:15:21][INFO][getThumbnail]  Successfully mapped response to POJO.
+[2020/01/10 08:15:21][INFO][getThumbnail]  ResultCode: 210
+[2020/01/10 08:15:21][INFO][getThumbnail]  successfully return movies thumbnail
+[2020/01/10 08:15:21][INFO][DeleteItemCart]  GOT all thumbnails for movies.
+[2020/01/10 08:15:21][WARNING][DeleteItemCart]  Shopping cart retrieved successfully.
+[2020/01/10 08:15:24][WARNING][DeleteItemCart]  Deleting item in the cart....
+[2020/01/10 08:15:24][INFO][DeleteItemCart]  Received email, movie_id and quantity
+[2020/01/10 08:15:24][INFO][DeleteItemCart]  Request:
+{"email":"hieuthanden1@gmail.com","movie_id":"tt1135989"}
+[2020/01/10 08:15:24][INFO][DeleteItemCart]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT email FROM cart WHERE email = 'hieuthanden1@gmail.com' AND movie_id = 'tt1135989';
+[2020/01/10 08:15:24][INFO][DeleteItemCart]  Query succeeded.
+[2020/01/10 08:15:24][INFO][DeleteItemCart]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: DELETE FROM cart WHERE email = 'hieuthanden1@gmail.com' AND movie_id = 'tt1135989';
+[2020/01/10 08:15:24][INFO][DeleteItemCart]  Query succeeded.
+[2020/01/10 08:15:24][WARNING][DeleteItemCart]  Shopping cart item deleted successfully.
+[2020/01/10 08:15:25][WARNING][DeleteItemCart]  Retrieve items in the cart....
+[2020/01/10 08:15:25][INFO][DeleteItemCart]  Received email
+[2020/01/10 08:15:25][INFO][DeleteItemCart]  Request:
+{"email":"hieuthanden1@gmail.com"}
+[2020/01/10 08:15:25][INFO][DeleteItemCart]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT email, movie_id, quantity, unit_price, discount FROM cart INNER JOIN movie_price USING (movie_id) WHERE email  = 'hieuthanden1@gmail.com';
+[2020/01/10 08:15:25][INFO][DeleteItemCart]  Query succeeded.
+[2020/01/10 08:15:25][WARNING][DeleteItemCart]  Shopping cart item does not exist on cart.
+[2020/01/10 08:15:28][WARNING][RetrieveOrder]  Placing order....
+[2020/01/10 08:15:28][INFO][RetrieveOrder]  Received email for place order
+[2020/01/10 08:15:28][INFO][RetrieveOrder]  Request:
+{"email":"hieuthanden1@gmail.com"}
+[2020/01/10 08:15:28][INFO][RetrieveOrder]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT token, sale_id, email, movie_id, quantity, unit_price, discount, sale_date FROM sale INNER JOIN movie_price USING (movie_id) INNER JOIN transaction using (sale_id) WHERE email LIKE 'hieuthanden1@gmail.com' AND transaction.capture_id IS NOT NULL ORDER BY token;
+[2020/01/10 08:15:29][INFO][RetrieveOrder]  Query succeeded.
+[2020/01/10 08:15:44][WARNING][DeleteItemCart]  Retrieve items in the cart....
+[2020/01/10 08:15:44][INFO][DeleteItemCart]  Received email
+[2020/01/10 08:15:44][INFO][DeleteItemCart]  Request:
+{"email":"hieuthanden1@gmail.com"}
+[2020/01/10 08:15:44][INFO][DeleteItemCart]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT email, movie_id, quantity, unit_price, discount FROM cart INNER JOIN movie_price USING (movie_id) WHERE email  = 'hieuthanden1@gmail.com';
+[2020/01/10 08:15:44][INFO][DeleteItemCart]  Query succeeded.
+[2020/01/10 08:15:44][WARNING][DeleteItemCart]  Shopping cart item does not exist on cart.
+[2020/01/10 08:15:50][WARNING][RetrieveOrder]  Placing order....
+[2020/01/10 08:15:50][INFO][RetrieveOrder]  Received email for place order
+[2020/01/10 08:15:50][INFO][RetrieveOrder]  Request:
+{"email":"hieuthanden1@gmail.com"}
+[2020/01/10 08:15:50][INFO][RetrieveOrder]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT token, sale_id, email, movie_id, quantity, unit_price, discount, sale_date FROM sale INNER JOIN movie_price USING (movie_id) INNER JOIN transaction using (sale_id) WHERE email LIKE 'hieuthanden1@gmail.com' AND transaction.capture_id IS NOT NULL ORDER BY token;
+[2020/01/10 08:15:51][INFO][RetrieveOrder]  Query succeeded.
+[2020/01/10 08:16:42][WARNING][DeleteItemCart]  Retrieve items in the cart....
+[2020/01/10 08:16:42][INFO][DeleteItemCart]  Received email
+[2020/01/10 08:16:42][INFO][DeleteItemCart]  Request:
+{"email":"hieuthanden1@gmail.com"}
+[2020/01/10 08:16:42][INFO][DeleteItemCart]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT email, movie_id, quantity, unit_price, discount FROM cart INNER JOIN movie_price USING (movie_id) WHERE email  = 'hieuthanden1@gmail.com';
+[2020/01/10 08:16:43][INFO][DeleteItemCart]  Query succeeded.
+[2020/01/10 08:16:43][WARNING][DeleteItemCart]  Shopping cart item does not exist on cart.
+[2020/01/10 08:16:47][WARNING][DeleteItemCart]  Retrieve items in the cart....
+[2020/01/10 08:16:47][INFO][DeleteItemCart]  Received email
+[2020/01/10 08:16:47][INFO][DeleteItemCart]  Request:
+{"email":"hieuthanden1@gmail.com"}
+[2020/01/10 08:16:47][INFO][DeleteItemCart]  Trying query: com.mysql.cj.jdbc.ClientPreparedStatement: SELECT email, movie_id, quantity, unit_price, discount FROM cart INNER JOIN movie_price USING (movie_id) WHERE email  = 'hieuthanden1@gmail.com';
+[2020/01/10 08:16:47][INFO][DeleteItemCart]  Query succeeded.
+[2020/01/10 08:16:47][WARNING][DeleteItemCart]  Shopping cart item does not exist on cart.
