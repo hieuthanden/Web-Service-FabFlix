@@ -4,10 +4,12 @@ import Idm from "../services/Idm";
 
 import "../css/common.css";
 
+
 class Register extends Component {
     state = {
         email: "",
-        password: ""
+        password: "",
+        message: "password must contain lowercase, uppercase, and number"
       };
   handleSubmit = e => {
     e.preventDefault();
@@ -17,9 +19,10 @@ class Register extends Component {
     Idm.register(email, password)
       .then(response => {
         console.log(response);
+        this.setState({message: response['data']['message']})
       })
       .catch(error => console.log(error));
-    return this.props.history.push('/login');
+    //return this.props.history.push('/login');
   };
   updateField = ({ target }) => {
     const { name, value } = target;
@@ -31,6 +34,7 @@ class Register extends Component {
     return (
       <div>
         <h1>Register</h1>
+        <p>{this.state.message}</p>
         <form onSubmit={this.handleSubmit}>
           <label className="label">Email</label>
           <input

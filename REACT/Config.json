@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://98.149.89.101:11111/api/g",
+  "baseUrl": "http://www.hieuttran:12345/api/g",
   "pollLimit": 50,
   "gatewayEPs": {
     "reportEP": "/report"

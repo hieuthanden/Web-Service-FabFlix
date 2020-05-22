@@ -6,9 +6,9 @@ import "../css/thumbnail.css"
 
 import SearchBar from "./SearchBar";
 
-function renderThumb(title, thumb) {
-  var img_poster = "http://image.tmdb.org/t/p/w300" + thumb;
-  return '<div class="responsive"><div class="gallery"><a href=/login"><img src="'
+function renderThumb(title, thumb, movie_id) {
+  var img_poster = "https://image.tmdb.org/t/p/w300_and_h450_bestv2" + thumb;
+  return '<div class="responsive"><div class="gallery"><a href=/details/' + movie_id + '><img src="'
    + img_poster + '" alt="' + title + '" width="300" height="450"></a><div class="desc">' +
   title + '</div></div></div>';
 }
@@ -23,7 +23,7 @@ class Movies extends Component {
 };
 
   getPopularMovie = () => {
-    movies.search('?orderby=rating&direction=DESC')
+    movies.search('?orderby=year&direction=DESC')
     .then(response => {
       var res_movie = response['data']['movies'];
       var list_movie = [];
@@ -43,7 +43,7 @@ class Movies extends Component {
     for (var i = 0; i < movies.length; i++)
     {
       if( movies[0] !== undefined){
-        thumb_list += renderThumb(movies[i]['title'], movies[i]['poster_path']);
+        thumb_list += renderThumb(movies[i]['title'], movies[i]['poster_path'], movies[i]['movie_id']);
       }
     }
     return thumb_list;

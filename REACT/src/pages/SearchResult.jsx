@@ -5,9 +5,9 @@ import "../css/thumbnail.css"
 
 import SearchBar from "./SearchBar";
 
-function renderThumb(title, thumb) {
+function renderThumb(title, thumbm, movie_id) {
   var img_poster = "http://image.tmdb.org/t/p/w500" + thumb;
-  return '<div class="responsive"><div class="gallery"><a href=/login"><img src="'
+  return '<div class="responsive"><div class="gallery"><a href=/details/' + movie_id + '><img src="'
    + img_poster + '" alt="' + title + '" width="400" height="600"></a><div class="desc">' +
   title + '</div></div></div>';
 }
@@ -50,7 +50,7 @@ class Search extends Component {
     for (var i = 0; i < movies.length; i++)
     {
       if( movies[0] !== undefined){
-        thumb_list += renderThumb(movies[i]['title'], movies[i]['poster_path']);
+        thumb_list += renderThumb(movies[i]['title'], movies[i]['poster_path'], movies[i]['movie_id']);
       }
     }
     return thumb_list;

@@ -8,10 +8,10 @@ import "../css/search.css"
 import SearchBar from "./SearchBar";
 
 function renderThumb(title, year, director, rating, thumb, movie_id) {
-  var img_poster = "http://image.tmdb.org/t/p/w300" + thumb;
+  var img_poster = "https://image.tmdb.org/t/p/w300_and_h450_bestv2/" + thumb;
   return '<div style="float:left; width:49.9999%; padding:10px">' +
-  '<div style="float:left; width:29.9999%; padding:10px"><img src="' +
-  img_poster + '" alt="Avengers: Endgame" width="100%" height="auto"></img></div>' +
+  '<div style="float:left; width:29.9999%; padding:10px"><a href=/details/' + movie_id + '><img src="' +
+  img_poster + '" alt="' + title + '" width="100%" height="auto"></img></div>' +
   '<div style="float:left; width:69.9999%; padding:10px">' +
   '<div style="content: ""; display: table; clear: both"><h2>' +
      title + '</h2><p style="padding: 5px; font-size: 18px"> Year: ' +
